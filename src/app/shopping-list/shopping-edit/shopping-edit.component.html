@@ -1,0 +1,29 @@
+<div class="shopping-edit-component">
+  <form>
+    <div class="form">
+      <div class="form-item w-70">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="shoppingItem.name"
+          name="name"
+        />
+      </div>
+      <div class="form-item w-30">
+        <label for="amount">Amount</label>
+        <input
+          id="amount"
+          type="text"
+          [(ngModel)]="shoppingItem.amount"
+          name="amount"
+        />
+      </div>
+    </div>
+    <div class="form-btns">
+      <button (click)="save()" class="btn green" type="button">Save</button>
+      <button (click)="clear()" class="btn blue" type="button">Clear</button>
+      <button class="btn red" type="button">Delete</button>
+    </div>
+  </form>
+</div>

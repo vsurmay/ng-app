@@ -1,1 +1,15 @@
-<p>shopping-list works!</p>
+<div class="shopping-list-component">
+  <div class="shopping-list-add">
+    <app-shopping-edit></app-shopping-edit>
+  </div>
+  <ul class="shopping-list">
+    <li class="shopping-list__item" *ngFor="let ingredient of ingredients">
+      <a>
+        <div class="content">
+          <p>{{ ingredient.name }}</p>
+          <p>({{ ingredient.amount }})</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

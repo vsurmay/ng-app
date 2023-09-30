@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<li *ngIf="recipe" class="recipe-item">
+  <a [routerLink]="'/recipes/' + recipe.id" class="recipe-link" (click)="onSelected()">
+    <div class="texts-wrapper">
+      <p>{{ recipe.name }}</p>
+      <p>{{ recipe.description }}</p>
+    </div>
+    <img [src]="recipe.imagePath" [alt]="recipe.name">
+  </a>
+</li>

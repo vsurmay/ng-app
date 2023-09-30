@@ -1,1 +1,11 @@
-<p>recipe-list works!</p>
+<div class="recipe-list-component">
+  <div class="btn-wrapper">
+    <button class="btn">Add recipe</button>
+  </div>
+  <ul class="recipes-list">
+    <app-recipe-item
+      *ngFor="let recipe of recipes"
+      [recipe]="recipe"
+    ></app-recipe-item>
+  </ul>
+</div>

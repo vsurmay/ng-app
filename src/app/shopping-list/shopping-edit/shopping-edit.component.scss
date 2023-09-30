@@ -1,0 +1,53 @@
+.shopping-edit-component {
+  margin-bottom: 20px;
+
+  .form {
+    display: flex;
+    gap: 20px;
+    width: 30%;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      &.w-70 {
+        width: 70%;
+      }
+
+      &.w-30 {
+        width: 30%;
+      }
+    }
+
+    &-btns {
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .btn {
+        cursor: pointer;
+        outline: 0;
+        padding: 8px 20px;
+        min-width: 130px;
+        font-weight: 700;
+        border: none;
+        border-radius: 8px;
+        color: #ffffff;
+
+        &.red {
+          background: #ff2e2e;
+        }
+
+        &.green {
+          background: #01df01;
+        }
+
+        &.blue {
+          background: #4848d4;
+        }
+      }
+    }
+  }
+}

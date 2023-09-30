@@ -1,0 +1,17 @@
+.recipe-component {
+  padding-top: 20px;
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+
+    .list {
+      width: 50%;
+    }
+
+    .detail {
+      width: 50%;
+    }
+  }
+}

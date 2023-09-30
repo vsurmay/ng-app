@@ -1,0 +1,30 @@
+.shopping-list-component {
+  padding-top: 30px;
+
+  .shopping-list-add {
+    border-bottom: 1px solid black;
+  }
+
+  .shopping-list {
+    margin-top: 20px;
+    border: 1px solid #2d2d2d;
+    border-radius: 15px;
+
+    &__item {
+      padding: 10px;
+      border-bottom: 1px solid #2d2d2d;
+
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+    }
+  }
+}

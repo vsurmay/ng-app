@@ -1,1 +1,36 @@
-<p>header works!</p>
+<header class="header">
+  <div class="header-wrapper">
+    <div class="header-logo"><a>Recipe Book</a></div>
+    <nav class="header-menu">
+      <ul>
+        <li>
+          <a
+            class="header-menu__link"
+            routerLink="recipes"
+            routerLinkActive="active"
+          >
+            Recipes
+          </a>
+        </li>
+        <li>
+          <a
+            class="header-menu__link"
+            routerLink="shopping-list"
+            routerLinkActive="active"
+          >Shopping</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="header-manage" appDropDown>
+    <div class="header-manage__preview">
+      Manage<img src="assets/images/icons/dropdown-arrow.svg">
+    </div>
+    <div class="header-manage__dropdowm">
+      <p>Test</p>
+      <p>Test</p>
+      <p>Test</p>
+    </div>
+  </div>
+</header>
