@@ -14,8 +14,5 @@ export class RecipeItemComponent {
 
   @Input() recipe: RecipeModel | undefined;
 
-  onSelected() {
-    this.recipeService.recipeSelected.emit(this.recipe);
-  }
 
 }

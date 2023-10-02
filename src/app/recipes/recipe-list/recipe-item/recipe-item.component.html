@@ -1,5 +1,9 @@
 <li *ngIf="recipe" class="recipe-item">
-  <a [routerLink]="'/recipes/' + recipe.id" class="recipe-link" (click)="onSelected()">
+  <a
+    [routerLink]="[recipe.id]"
+    class="recipe-link"
+    routerLinkActive="active"
+  >
     <div class="texts-wrapper">
       <p>{{ recipe.name }}</p>
       <p>{{ recipe.description }}</p>
