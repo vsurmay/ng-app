@@ -13,6 +13,28 @@
     &__item {
       padding: 10px;
       border-bottom: 1px solid #2d2d2d;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:first-child {
+        border-radius: 15px 15px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 15px 15px;
+      }
+
+      &:last-child:first-child {
+        border-radius: 15px;
+      }
+
+      &:hover {
+        background: #ececec;
+      }
+
+      &.active {
+        background: #ececec;
+      }
 
 
       &:last-child {

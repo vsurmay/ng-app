@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {IngridientModel} from "../shared/ingridient.model";
+import {IngredientModel} from "../shared/ingridient.model";
 import {ShoppingListService} from "./shopping-list.service";
 import {Subscription} from "rxjs";
 
@@ -10,8 +10,10 @@ import {Subscription} from "rxjs";
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
 
-  ingredients: IngridientModel[] = [];
-  onChangeIngredientsSubscription: Subscription | undefined;
+  ingredients: IngredientModel[] = [];
+  onChangeIngredientsSubscription: Subscription;
+  onChangeActiveIngredientSubscription: Subscription;
+  activeIngredient: IngredientModel | null;
 
   constructor(
     private shoppingListService: ShoppingListService,
@@ -21,11 +23,19 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.ingredients = this.shoppingListService.getIngredientsList();
     this.onChangeIngredientsSubscription = this.shoppingListService.ingredientChanged.subscribe(ingredients => {
       this.ingredients = ingredients;
+    });
+    this.onChangeActiveIngredientSubscription = this.shoppingListService.activeIngredient.subscribe(ingredient => {
+      this.activeIngredient = ingredient ? {...ingredient} : null;
     })
+  }
+
+  onClickListItem(ingredient: IngredientModel) {
+    this.shoppingListService.activeIngredient.next(ingredient);
   }
 
   ngOnDestroy() {
     this.onChangeIngredientsSubscription?.unsubscribe();
+    this.onChangeActiveIngredientSubscription?.unsubscribe();
   }
 
 }

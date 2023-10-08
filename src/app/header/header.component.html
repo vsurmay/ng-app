@@ -19,18 +19,39 @@
             routerLinkActive="active"
           >Shopping</a>
         </li>
+        <li>
+          <a
+            class="header-menu__link"
+            routerLink="pipe"
+            routerLinkActive="active"
+          >Pipe</a>
+        </li>
+        <li>
+          <a
+            class="header-menu__link"
+            routerLink="posts"
+            routerLinkActive="active"
+          >Posts</a>
+        </li>
       </ul>
     </nav>
   </div>
 
-  <div class="header-manage" appDropDown>
-    <div class="header-manage__preview">
-      Manage<img src="assets/images/icons/dropdown-arrow.svg">
-    </div>
-    <div class="header-manage__dropdowm">
-      <p>Test</p>
-      <p>Test</p>
-      <p>Test</p>
+  <div class="header-right">
+    <a (click)="onLogout()"
+       class="logout"
+    >
+      Logout
+    </a>
+    <div class="header-manage" appDropDown>
+      <div class="header-manage__preview">
+        Manage<img src="assets/images/icons/dropdown-arrow.svg">
+      </div>
+      <div class="header-manage__dropdowm">
+        <p (click)="onSaveData()">Save data</p>
+        <p (click)="onFetchData()">Fetch data</p>
+        <p>Test</p>
+      </div>
     </div>
   </div>
 </header>

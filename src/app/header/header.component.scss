@@ -61,6 +61,20 @@
 
   }
 
+  &-right {
+    display: flex;
+    gap: 15px;
+
+    .logout {
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
   &-manage {
     position: relative;
 

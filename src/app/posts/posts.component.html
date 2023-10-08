@@ -1,0 +1,29 @@
+<div class="posts-component">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        formControlName="title"
+        id="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="content">content</label>
+      <input
+        type="text"
+        formControlName="content"
+        id="content"
+      />
+    </div>
+    <button>Send Post</button>
+  </form>
+  <h3>Posts list</h3>
+  <h4 *ngIf="isLoaderActive">Loading...</h4>
+  <ul>
+    <li *ngFor="let post of posts">
+      <p>{{post.title}}</p>
+      <p>{{post.content}}</p>
+    </li>
+  </ul>
+</div>

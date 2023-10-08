@@ -1,0 +1,12 @@
+<div
+  class="alert-box"
+  [ngClass]="{
+  'success': currentAlert.isSuccess,
+  'fail': !currentAlert.isSuccess,
+  'opacity': hideAlert,
+  'appearance': appearance
+  }"
+>
+  <p class="alert-box__text">{{ currentAlert.message }}</p>
+  <img class="alert-box__icon" [src]="getIcon()"/>
+</div>

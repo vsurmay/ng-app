@@ -3,13 +3,17 @@
     <app-shopping-edit></app-shopping-edit>
   </div>
   <ul class="shopping-list">
-    <li class="shopping-list__item" *ngFor="let ingredient of ingredients">
-      <a>
-        <div class="content">
-          <p>{{ ingredient.name }}</p>
-          <p>({{ ingredient.amount }})</p>
-        </div>
-      </a>
+<!--    [ngClass]="{'active': activeIngredient?.id === ingredient.id}"-->
+    <li
+      (click)="onClickListItem(ingredient)"
+      class="shopping-list__item"
+      *ngFor="let ingredient of ingredients"
+
+    >
+      <div class="content">
+        <p>{{ ingredient.name }}</p>
+        <p>({{ ingredient.amount }})</p>
+      </div>
     </li>
   </ul>
 </div>
