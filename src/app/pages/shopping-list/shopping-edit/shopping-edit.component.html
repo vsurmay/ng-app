@@ -1,0 +1,49 @@
+<div class="shopping-edit-component">
+  <form *ngIf="ingredientForm"
+        [formGroup]="ingredientForm"
+        (ngSubmit)="save()"
+  >
+    <div class="form">
+      <div class="form-item w-70">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          formControlName="name"
+          type="text"
+        />
+        <span *ngIf="!ingredientForm.get('name')?.valid && ingredientForm.get('name')?.touched">Error</span>
+      </div>
+      <div class="form-item w-30">
+        <label for="amount">Amount</label>
+        <input
+          id="amount"
+          type="number"
+          formControlName="amount"
+          [min]="1"
+          [max]="100"
+        />
+        <span *ngIf="!ingredientForm.get('amount')?.valid && ingredientForm.get('amount')?.touched">Error</span>
+      </div>
+    </div>
+    <div class="form-btns">
+      <button
+        [disabled]="!ingredientForm.valid"
+        class="btn green">
+        {{editMode ? "Update" : "Add"}}
+      </button>
+      <button
+        (click)="clear()"
+        class="btn blue"
+        type="button">
+        Clear
+      </button>
+
+      <button
+        *ngIf="editMode && activeIngredient"
+        (click)="onDelete(activeIngredient.id)"
+        class="btn red" type="button">
+        Delete
+      </button>
+</div>
+  </form>
+</div>

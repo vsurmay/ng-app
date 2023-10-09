@@ -1,0 +1,28 @@
+<div *ngIf="recipe" class="recipe-detail-component">
+  <img class="recipe-img"
+       [src]="recipe.imagePath"
+       [alt]="recipe.name">
+  <div class="recipe-detail">
+    <p>Recipe name: <span>{{ recipe.name }}</span></p>
+    <p>Recipe description: <span>{{ recipe.description }}</span></p>
+  </div>
+
+  <div class="recipe-manage" appDropDown>
+    <div class="recipe-manage__preview">
+      Manage recipes<img src="assets/images/icons/dropdown-arrow.svg">
+    </div>
+    <div class="recipe-manage__dropdowm">
+      <p (click)="toShoppingList(recipe)">To shopping list</p>
+      <p (click)="editRecipe()">Edit recipe</p>
+      <p (click)="deleteRecipe(recipe.id)">Delete recipe</p>
+    </div>
+  </div>
+  <div class="recipe-detail__ingredients">
+    <h5 class="title">Recipe ingredients</h5>
+    <ul class="recipe-ingredient__list">
+      <li class="recipe-ingredient__item" *ngFor="let ingredient of recipe?.ingredients">
+        <p>{{ingredient.name}} - {{ingredient.amount}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
