@@ -7,33 +7,30 @@ import {NgOptimizedImage} from "@angular/common";
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
-import {RecipesComponent} from './recipes/recipes.component';
-import {RecipeListComponent} from './recipes/recipe-list/recipe-list.component';
-import {RecipeDetailComponent} from './recipes/recipe-detail/recipe-detail.component';
-import {RecipeItemComponent} from './recipes/recipe-list/recipe-item/recipe-item.component';
-import {ShoppingListComponent} from './shopping-list/shopping-list.component';
-import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit.component';
-import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
-import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
-import {PipeComponent} from './pipe/pipe.component';
-import {PostsComponent} from './posts/posts.component';
+import {RecipesComponent} from "./pages/recipes/recipes.component";
+import {RecipeListComponent} from "./pages/recipes/recipe-list/recipe-list.component";
+import {RecipeDetailComponent} from "./pages/recipes/recipe-detail/recipe-detail.component";
+import {RecipeItemComponent} from "./pages/recipes/recipe-list/recipe-item/recipe-item.component";
+import {ShoppingListComponent} from "./pages/shopping-list/shopping-list.component";
+import {ShoppingEditComponent} from "./pages/shopping-list/shopping-edit/shopping-edit.component";
+import {RecipeStartComponent} from "./pages/recipes/recipe-start/recipe-start.component";
+import {RecipeEditComponent} from "./pages/recipes/recipe-edit/recipe-edit.component";
 
 import {DropDownDirective} from "./shared/drop-down.directive";
 
-import {ShoppingListService} from "./shopping-list/shopping-list.service";
-import {RecipeService} from "./recipes/recipe.service";
+import {ShoppingListService} from "./pages/shopping-list/shopping-list.service";
+import {RecipeService} from "./pages/recipes/recipe.service";
 
-import {ShortenPipe} from "./shorten.pipe";
-import {ReversePipe} from './reverse.pipe';
-import {SortPipe} from './sort.pipe';
-import {PostsService} from "./posts/posts.service";
-import {AuthComponent} from "./auth/auth.component";
+import {AuthComponent} from "./pages/auth/auth.component";
 import {LayoutComponent} from './layout/layout.component';
 import {RouterOutlet} from "@angular/router";
-import {AuthService} from "./auth/auth.service";
-import {AuthInterceptorService} from "./auth/auth-interceptor.service";
+import {AuthService} from "./pages/auth/auth.service";
+import {AuthInterceptorService} from "./pages/auth/auth-interceptor.service";
 import { AlertComponent } from './alert/alert.component';
 import {AlertService} from "./alert/alert.service";
+
+
+
 
 @NgModule({
   declarations: [
@@ -48,11 +45,6 @@ import {AlertService} from "./alert/alert.service";
     DropDownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    PipeComponent,
-    ShortenPipe,
-    ReversePipe,
-    SortPipe,
-    PostsComponent,
     AuthComponent,
     LayoutComponent,
     AlertComponent
@@ -70,7 +62,7 @@ import {AlertService} from "./alert/alert.service";
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptorService,
     multi: true
-  }, ShoppingListService, RecipeService, PostsService, AuthService, AlertService],
+  }, ShoppingListService, RecipeService, AuthService, AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AuthService, IUser} from "../auth/auth.service";
+import {AuthService, IUser} from "../pages/auth/auth.service";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
 

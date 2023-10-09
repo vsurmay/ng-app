@@ -1,17 +1,15 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {RecipesComponent} from "./recipes/recipes.component";
-import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
-import {RecipeDetailComponent} from "./recipes/recipe-detail/recipe-detail.component";
-import {RecipeStartComponent} from "./recipes/recipe-start/recipe-start.component";
-import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
-import {PipeComponent} from "./pipe/pipe.component";
-import {PostsComponent} from "./posts/posts.component";
-import {RecipesResolverService} from "./recipes/recipes-resolver.service";
-import {RecipeItemResolverService} from "./recipes/recipe-item-resolver.service";
 import {LayoutComponent} from "./layout/layout.component";
-import {AuthComponent} from "./auth/auth.component";
-import {AuthGuard} from "./auth/auth-guard.service";
+import {AuthComponent} from "./pages/auth/auth.component";
+import {AuthGuard} from "./pages/auth/auth-guard.service";
+import {RecipesComponent} from "./pages/recipes/recipes.component";
+import {RecipesResolverService} from "./pages/recipes/recipes-resolver.service";
+import {RecipeStartComponent} from "./pages/recipes/recipe-start/recipe-start.component";
+import {RecipeEditComponent} from "./pages/recipes/recipe-edit/recipe-edit.component";
+import {RecipeDetailComponent} from "./pages/recipes/recipe-detail/recipe-detail.component";
+import {RecipeItemResolverService} from "./pages/recipes/recipe-item-resolver.service";
+import {ShoppingListComponent} from "./pages/shopping-list/shopping-list.component";
 
 const appRoutes: Routes = [
   {
@@ -25,9 +23,7 @@ const appRoutes: Routes = [
           {path: ":id/edit", component: RecipeEditComponent, resolve: {RecipeItemResolverService}}
         ]
       },
-      {path: "shopping-list", component: ShoppingListComponent},
-      {path: "pipe", component: PipeComponent},
-      {path: "posts", component: PostsComponent}
+      {path: "shopping-list", component: ShoppingListComponent}
     ],
   },
   {path: "auth", component: AuthComponent}

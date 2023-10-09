@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {environment} from "../shared/environment";
+import {environment} from "../../shared/environment";
 import {BehaviorSubject, catchError, Subject, tap, throwError} from "rxjs";
 
 interface IAuthResponse {

@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "./auth.service";
 import {Router} from "@angular/router";
-import {AlertService} from "../alert/alert.service";
+import {AlertService} from "../../alert/alert.service";
 
 @Component({
   selector: "app-auth",
@@ -42,14 +42,13 @@ export class AuthComponent implements OnInit {
 
     if (this.isLoginMode) {
       this.authService.signIn(this.form.getRawValue()).subscribe(res => {
-        this.alertService.setCurrentAlert("Success", true);
+        this.alertService.setCurrentAlert("We login successfully", true);
         this.router.navigate(["/recipes"])
       }, error => {
         this.alertService.setCurrentAlert(error, false);
       })
     } else {
       this.authService.signUp(this.form.getRawValue()).subscribe(res => {
-        console.log(res);
         this.router.navigate(["/recipes"])
       }, error => {
         this.alertService.setCurrentAlert(error, false);
