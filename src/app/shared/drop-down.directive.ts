@@ -14,6 +14,7 @@ export class DropDownDirective {
   isOpen = false;
 
   @HostListener("click") clickOnDropDown() {
+    console.log("yes");
     this.isOpen = !this.isOpen;
     if (!this.isOpen) {
       this.rendered.addClass(this.elRef.nativeElement, "active");

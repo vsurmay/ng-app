@@ -1,6 +1,8 @@
 <header class="header">
   <div class="header-wrapper">
-    <div class="header-logo"><a>Recipe Book</a></div>
+    <div class="header-logo">
+      <a routerLink="/">Recipe Book</a>
+    </div>
     <nav class="header-menu">
       <ul>
         <li>
@@ -29,15 +31,15 @@
     >
       Logout
     </a>
-    <div class="header-manage" appDropDown>
-      <div class="header-manage__preview">
-        Manage<img src="assets/images/icons/dropdown-arrow.svg">
-      </div>
-      <div class="header-manage__dropdowm">
-        <p (click)="onSaveData()">Save data</p>
-        <p (click)="onFetchData()">Fetch data</p>
-        <p>Test</p>
-      </div>
-    </div>
+<!--    <div class="header-manage" appDropDown>-->
+<!--      <div class="header-manage__preview">-->
+<!--        Manage<img src="assets/images/icons/dropdown-arrow.svg">-->
+<!--      </div>-->
+<!--      <div class="header-manage__dropdowm">-->
+<!--        <p (click)="onSaveData()">Save data</p>-->
+<!--        <p (click)="onFetchData()">Fetch data</p>-->
+<!--        <p>Test</p>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </header>

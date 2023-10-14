@@ -2,7 +2,7 @@
   <div class="btn-wrapper">
     <button class="btn" (click)="clickOnAddedRecipe()">Add recipe</button>
   </div>
-  <ul class="recipes-list">
+  <ul class="recipes-list custom-scroll">
     <app-recipe-item
       *ngFor="let recipe of recipes"
       [recipe]="recipe"

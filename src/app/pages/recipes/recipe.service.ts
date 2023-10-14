@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {ShoppingListService} from "../shopping-list/shopping-list.service";
-import {map, Subject} from "rxjs";
+import {map, Subject, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {IIngredient} from "../../shared/ingridient.model";
 import {AlertService} from "../../alert/alert.service";
@@ -43,14 +43,10 @@ export class RecipeService {
           })
         }
         return recipesArray;
+      }), tap(recipes => {
+        this.recipes = [...recipes];
+        this.recipeListChanged.next([...this.recipes]);
       }))
-  }
-
-  setRecipeList() {
-    this.getRecipesList().subscribe(res => {
-      this.recipes = [...res];
-      this.recipeListChanged.next([...this.recipes]);
-    })
   }
 
   addedRecipeItem(recipe: IRecipe) {

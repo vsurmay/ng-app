@@ -1,5 +1,4 @@
 .shopping-list-component {
-  padding-top: 30px;
 
   .shopping-list-add {
     border-bottom: 1px solid black;
@@ -9,6 +8,7 @@
     margin-top: 20px;
     border: 1px solid #2d2d2d;
     border-radius: 15px;
+    max-height: calc(100vh - 260px);
 
     &__item {
       padding: 10px;

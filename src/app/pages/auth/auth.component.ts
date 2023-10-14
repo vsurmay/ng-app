@@ -23,6 +23,7 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("inside");
     this.createForm();
   }
 
