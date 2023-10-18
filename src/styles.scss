@@ -130,3 +130,34 @@ body {
   }
 
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  label {}
+
+  input {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background: #ffffff;
+    outline: none;
+    height: 30px;
+    color: #cccccc;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    padding-left: 6px;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border: 1px solid #a0a0ff;
+    }
+
+    &.ng-invalid {
+      &.ng-touched {
+        border: 1px solid #ff1414;
+      }
+    }
+
+  }
+}

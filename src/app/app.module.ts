@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, isDevMode} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -13,7 +13,10 @@ import {AlertComponent} from './alert/alert.component';
 import {AuthService} from "./pages/auth/auth.service";
 import {AuthInterceptorService} from "./pages/auth/auth-interceptor.service";
 import {AlertService} from "./alert/alert.service";
-
+import {StoreModule} from "@ngrx/store";
+import {reducers} from './store';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import {AlertService} from "./alert/alert.service";
     ReactiveFormsModule,
     NgOptimizedImage,
     HttpClientModule,
-    RouterOutlet
+    RouterOutlet,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()})
   ],
   providers: [
     {
@@ -37,7 +43,7 @@ import {AlertService} from "./alert/alert.service";
       multi: true
     },
     AuthService,
-    AlertService
+    AlertService,
   ],
   exports: [],
   bootstrap: [AppComponent]

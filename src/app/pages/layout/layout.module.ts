@@ -5,18 +5,24 @@ import {HeaderComponent} from "../../header/header.component";
 import {DropDownDirective} from "../../shared/drop-down.directive";
 import {ShoppingListService} from "../shopping-list/shopping-list.service";
 import {RecipeService} from "../recipes/recipe.service";
+import {FirstLetterPipe} from "../../pipes/first-letter.pipe";
+import {LoaderComponent} from "../../shared/loader/loader.component";
 
 @NgModule({
   declarations: [
     LayoutComponent,
     HeaderComponent,
-    DropDownDirective
+    DropDownDirective,
+    FirstLetterPipe,
+    LoaderComponent
   ],
   imports: [
     LayoutRoutingModule,
   ],
   exports: [
     DropDownDirective,
+    FirstLetterPipe,
+    LoaderComponent
   ],
   providers: [
     RecipeService,

@@ -13,6 +13,7 @@ import {RecipeStartComponent} from "./recipe-start/recipe-start.component";
 import {RecipeEditComponent} from "./recipe-edit/recipe-edit.component";
 import {RecipeItemResolverService} from "./recipe-item-resolver.service";
 import {RecipesResolverService} from "./recipes-resolver.service";
+import {AppModule} from "../../app.module";
 
 @NgModule({
   declarations: [
@@ -23,12 +24,12 @@ import {RecipesResolverService} from "./recipes-resolver.service";
     RecipeStartComponent,
     RecipeEditComponent,
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RecipeRoutingModule,
-    LayoutModule
-  ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        RecipeRoutingModule,
+        LayoutModule,
+    ],
   exports: [
     RecipesComponent,
     RecipeListComponent,

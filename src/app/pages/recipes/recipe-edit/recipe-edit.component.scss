@@ -27,12 +27,12 @@
 
   .form-group {
     margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+    //display: flex;
+    //flex-direction: column;
+    //gap: 3px;
 
     label {
-      font-weight: 700;
+      //font-weight: 700;
     }
 
     .image-wrapper {
@@ -64,9 +64,9 @@
     }
   }
 
-  input.ng-invalid.ng-touched {
-    border: 1px solid red;
-  }
+  //input.ng-invalid.ng-touched {
+  //  border: 1px solid red;
+  //}
 
   textarea.ng-invalid.ng-touched {
     border: 1px solid red;

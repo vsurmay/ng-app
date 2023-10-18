@@ -35,7 +35,7 @@ export class ShoppingEditComponent implements OnInit {
   createForm() {
     this.ingredientForm = new FormGroup({
       "name": new FormControl(this.activeIngredient && this.activeIngredient.name || "", Validators.required),
-      "amount": new FormControl(this.activeIngredient && this.activeIngredient.amount || 1, Validators.required)
+      "amount": new FormControl(this.activeIngredient && this.activeIngredient.amount || null, [Validators.required, Validators.min(1), Validators.max(99)])
     })
   }
 

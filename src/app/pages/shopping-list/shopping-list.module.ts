@@ -7,6 +7,7 @@ import {RouterLink, RouterOutlet} from "@angular/router";
 import {ShoppingListComponent} from "./shopping-list.component";
 import {ShoppingEditComponent} from "./shopping-edit/shopping-edit.component";
 import {ShoppingListRoutingModule} from "./shopping-list-routing.module";
+import {LayoutModule} from "../layout/layout.module";
 
 
 @NgModule({
@@ -23,10 +24,12 @@ import {ShoppingListRoutingModule} from "./shopping-list-routing.module";
     RouterOutlet,
     RouterLink,
     ShoppingListRoutingModule,
+    LayoutModule
   ],
   exports: [
     ShoppingListComponent,
     ShoppingEditComponent
   ]
 })
-export class ShoppingListModule {}
+export class ShoppingListModule {
+}

@@ -4,7 +4,7 @@
         (ngSubmit)="save()"
   >
     <div class="form">
-      <div class="form-item w-70">
+      <div class="form-group form-item w-70">
         <label for="name">Name</label>
         <input
           id="name"
@@ -13,16 +13,13 @@
         />
         <span *ngIf="!ingredientForm.get('name')?.valid && ingredientForm.get('name')?.touched">Error</span>
       </div>
-      <div class="form-item w-30">
+      <div class="form-group form-item w-30">
         <label for="amount">Amount</label>
         <input
           id="amount"
           type="number"
           formControlName="amount"
-          [min]="1"
-          [max]="100"
         />
-        <span *ngIf="!ingredientForm.get('amount')?.valid && ingredientForm.get('amount')?.touched">Error</span>
       </div>
     </div>
     <div class="form-btns">

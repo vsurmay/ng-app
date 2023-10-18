@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "./auth.service";
+import {AuthService, IUser} from "./auth.service";
 import {Router} from "@angular/router";
 import {AlertService} from "../../alert/alert.service";
 
@@ -13,6 +13,7 @@ export class AuthComponent implements OnInit {
 
   isLoginMode = true;
   form: FormGroup;
+  user: IUser;
 
   constructor(
     private fb: FormBuilder,
@@ -23,8 +24,13 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("inside");
     this.createForm();
+    this.authService.user.subscribe(user => {
+      if (user) {
+        this.user = user;
+        this.createForm();
+      }
+    })
   }
 
   onSwitchLoginMode() {
@@ -33,8 +39,8 @@ export class AuthComponent implements OnInit {
 
   createForm() {
     this.form = this.fb.group({
-      email: ["", [Validators.required, Validators.email]],
-      password: ["", Validators.required]
+      email: [this.user && this.user.email || "", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, Validators.minLength(6)]]
     })
   }
 

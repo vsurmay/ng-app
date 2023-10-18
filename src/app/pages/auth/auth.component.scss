@@ -1,0 +1,58 @@
+.auth-component {
+  height: 100vh;
+  display: flex;
+
+  .background {
+    height: 100%;
+    width: 75%;
+  }
+
+  .auth-wrapper {
+    height: 100%;
+    width: 25%;
+    background-color: #dcdcdc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //padding: 10px;
+
+    .box {
+      width: 100%;
+    }
+
+    .title {
+      margin-bottom: 10px;
+      font-size: 34px;
+      text-align: center;
+    }
+
+    .form {
+      padding: 10px;
+
+      &-group {
+        margin-bottom: 15px;
+      }
+
+      .btns-wrapper {
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        .btn {
+          min-width: 100px;
+          padding: 8px 15px;
+          border-radius: 10px;
+          cursor: pointer;
+          background: #ececec;
+          border: 2px solid #676767;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #d5d5d5;
+          }
+        }
+      }
+
+    }
+  }
+}

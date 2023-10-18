@@ -30,6 +30,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(["/auth"]);
   }
 
+  onChangeUser() {
+    this.router.navigate(["/auth"]);
+  }
+
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }
