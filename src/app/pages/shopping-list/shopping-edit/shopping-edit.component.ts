@@ -71,6 +71,7 @@ export class ShoppingEditComponent implements OnInit {
 
   onDelete(id: string | undefined) {
     if (!id) return;
+    this.shoppingListService.changedIngredientList.next({action: "deleted", id});
     this.shoppingListService.deleteIngredient(id).subscribe(() => {
       this.alertService.setCurrentAlert("An ingredient was deleted successfully", true);
     }, error => {

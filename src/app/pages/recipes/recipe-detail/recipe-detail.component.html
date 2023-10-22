@@ -1,4 +1,4 @@
-<div *ngIf="recipe" class="recipe-detail-component">
+<div *ngIf="recipe" class="recipe-detail-component" [@recipeItemAnimation]="isOpen">
   <img class="recipe-img"
        [src]="recipe.imagePath"
        [alt]="recipe.name">

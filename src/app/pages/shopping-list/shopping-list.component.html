@@ -5,10 +5,14 @@
   <div *ngIf="error$ | async">
     Something went wrong
   </div>
-  <ul *ngIf="!(loader$ | async);else loader" class="shopping-list custom-scroll">
+  <ul
+    *ngIf="!(loader$ | async);else loader"
+    #ulList
+    class="shopping-list custom-scroll">
     <li
       (click)="onClickListItem(ingredient)"
       class="shopping-list__item"
+      [id]="ingredient.id"
       *ngFor="let ingredient of ingredients$ | async"
       [ngClass]="{'active': activeIngredient?.id === ingredient.id}"
     >
@@ -19,6 +23,7 @@
     </li>
   </ul>
 </div>
+
 <ng-template #loader>
   <app-loader></app-loader>
 </ng-template>

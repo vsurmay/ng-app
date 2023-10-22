@@ -11,6 +11,7 @@ import {ShoppingListActions} from "./store/shopping-list.actions";
 export class ShoppingListService {
 
   activeIngredient = new Subject<IIngredient | null>();
+  changedIngredientList = new Subject<{action: "deleted" | "added" | "edited", id: string}>();
 
   constructor(
     private http: HttpClient,
@@ -49,6 +50,7 @@ export class ShoppingListService {
       name: string
     }>(`${environment.dataBasePath}/ingredients/${user?.localId}.json`, ingredient)
       .pipe(tap(res => {
+        this.changedIngredientList.next({action: "added", id: res.name})
         this.store.dispatch(ShoppingListActions.addedToShoppingList(
           {
             ingredient: {...ingredient, id: res.name}
@@ -72,6 +74,7 @@ export class ShoppingListService {
     const user = this.authService.getUserWithLocaleStorage();
     return this.http.put<IIngredient>(`${environment.dataBasePath}/ingredients/${user?.localId}/${ingredient.id}.json`, ingredient)
       .pipe(tap(res => {
+        if (res.id) this.changedIngredientList.next({action: "edited", id: res.id});
         this.store.dispatch(ShoppingListActions.updateShoppingListItem({ingredient: res}));
       }))
   }
@@ -80,7 +83,7 @@ export class ShoppingListService {
     const user = this.authService.getUserWithLocaleStorage();
     return this.http.delete<null>(`${environment.dataBasePath}/ingredients/${user?.localId}/${id}.json`)
       .pipe(tap(res => {
-        this.store.dispatch(ShoppingListActions.deleteFromShoppingList({id}))
+        this.store.dispatch(ShoppingListActions.deleteFromShoppingList({id}));
       }))
   }
 
